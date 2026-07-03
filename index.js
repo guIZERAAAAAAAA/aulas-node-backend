@@ -22,3 +22,5 @@ app.get("/api/v1/somar", (req, res) => {
 app.listen(3000, () => {
     console.log("Servidor ouvindo na porta 3000")
 })
+
+    
