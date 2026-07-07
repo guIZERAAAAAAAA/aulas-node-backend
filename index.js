@@ -1,26 +1,63 @@
 import express from 'express'
+import bancoDeDados from './repository/index.js'
 
 // server ou app
 const app = express()
 //- path params - router
-app.get("/api/v1/somar", (req, res) => {
-    // query params
-    console.log(req.query)
 
-    const num1 = Number(req.query.num1)
-    const num2 = Number(req.query.num2)
-    const resultado = num1 + num2
+app.put("/api/pessoa/:id", (req, res) => {
+    const id = req.params.id
 
-    res.send({ resultado, "Tarefa": "Pesquise sobre QueryParams" })
+ const pessoa = bancoDeDados.find(it => it.id == id ) 
+
+if (!pessoa){
+    res.send({ message : "Pessoas não encontrada "})
+    return
+} 
+
+   res.send({pessoa})
+
 })
 
-// aqui em diante
+app.put("/api/pessoa/",(req,res) => {
+//const name = req.query.id
+//const name = req.query.name pode ser assim mais o debaixo é melhor 
+ const { id , name } = req.query
 
-// metodo GET da função de subtrair usando QueryParam
-// Com numero1 e numero2 ou num1 e num2
+//if(id == || name == null ) { ( pode ser assim mas tem outro jeito )
+if( !id || !name ) {
+    res.send({message: " Favor informar id e name " })
+    return
+}
+
+
+bancoDeDados.push({id, name })
+res.send({message: "pessoa criada com sucesso " })
+})
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.listen(3000, () => {
-    console.log("Servidor ouvindo na porta 3000")
+    console.log("Servidor escutando na porta 3000")
 })
 
-    
+    ////////////////////////////////////////////////////////
+
