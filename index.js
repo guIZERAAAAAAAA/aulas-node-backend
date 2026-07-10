@@ -40,21 +40,6 @@ res.send({message: "pessoa criada com sucesso " })
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.listen(3000, () => {
     console.log("Servidor escutando na porta 3000")
 })
