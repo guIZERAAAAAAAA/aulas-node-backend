@@ -1,0 +1,24 @@
+$kind: http-request
+name: subtrair
+description: ""
+url: http://localhost:3000/api/v1/subtrair
+method: POST
+queryParams:
+  - key: num1
+    value: "23"
+    disabled: true
+    description: ""
+  - key: num2
+    value: "70"
+    disabled: true
+    description: ""
+body:
+  type: json
+  content: "{\r
+
+    \    \"num1\" : 10 ,\r
+
+    \    \"num2\" : 10 \r
+
+    \ }"
+order: 2000

@@ -1,0 +1,6 @@
+$kind: http-request
+name: erro
+description: ""
+url: http://localhost:3000/api/v1/erro
+method: POST
+order: 1485
