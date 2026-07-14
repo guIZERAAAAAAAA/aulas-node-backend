@@ -1,0 +1,23 @@
+$kind: http-request
+name: New Request
+url: "http://localhost:3000/api/v1/ex1?num1 =50&num2 =50 "
+method: POST
+queryParams:
+  - key: "num1 "
+    value: "50"
+    disabled: false
+    description: ""
+  - key: "num2 "
+    value: "50 "
+    disabled: false
+    description: ""
+body:
+  type: json
+  content: "{\r
+
+    \    \"num1\" : 10 , \r
+
+    \    \"num2\" : 10\r
+
+    }"
+order: 1783990458672
